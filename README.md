@@ -1,8 +1,9 @@
 # Express Server
 
 ## Installation
-
-```bash
 npm install
+
+## Run server
+  npm start
 
 
