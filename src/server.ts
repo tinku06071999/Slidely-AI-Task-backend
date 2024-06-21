@@ -62,6 +62,66 @@ app.get('/read', (req, res) => {
     res.send(submissions[index]);
 });
 
+
+// Endpoint to update a submission by index
+app.put('/update', (req, res) => {
+    const index = parseInt(req.query.index as string, 10);
+
+    if (isNaN(index)) {
+        return res.status(400).send({ error: 'Invalid index' });
+    }
+
+    let submissions = [];
+
+    if (fs.existsSync(dbFilePath)) {
+        submissions = JSON.parse(fs.readFileSync(dbFilePath, 'utf8'));
+    }
+
+    if (index < 0 || index >= submissions.length) {
+        return res.status(404).send({ error: 'Submission not found' });
+    }
+
+    submissions[index] = req.body;
+
+    try {
+        fs.writeFileSync(dbFilePath, JSON.stringify(submissions, null, 2));
+        res.send('Submission updated');
+    } catch (error) {
+        console.error('Error writing to db.json:', error);
+        res.status(500).send({ error: 'Internal server error' });
+    }
+});
+
+// Endpoint to delete a submission by index
+app.delete('/delete', (req, res) => {
+    const index = parseInt(req.query.index as string, 10);
+
+    if (isNaN(index)) {
+        return res.status(400).send({ error: 'Invalid index' });
+    }
+
+    let submissions = [];
+
+    if (fs.existsSync(dbFilePath)) {
+        submissions = JSON.parse(fs.readFileSync(dbFilePath, 'utf8'));
+    }
+
+    if (index < 0 || index >= submissions.length) {
+        return res.status(404).send({ error: 'Submission not found' });
+    }
+
+    submissions.splice(index, 1);
+
+    try {
+        fs.writeFileSync(dbFilePath, JSON.stringify(submissions, null, 2));
+        res.send('Submission deleted');
+    } catch (error) {
+        console.error('Error writing to db.json:', error);
+        res.status(500).send({ error: 'Internal server error' });
+    }
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

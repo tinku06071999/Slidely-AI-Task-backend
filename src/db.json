@@ -1,47 +1,5 @@
 [
   {
-    "name": "tinku",
-    "email": "tinku@gmail.com",
-    "phone": "9521386314",
-    "github_link": "https://github.com",
-    "stopwatch_time": "00:00:00"
-  },
-  {
-    "name": "testing",
-    "email": "testing@gmail.com",
-    "phone": "1234567890",
-    "github_link": "jandjfkdas",
-    "stopwatch_time": "00:00:07"
-  },
-  {
-    "name": "testing",
-    "email": "testing@gmail.com",
-    "phone": "1234567890",
-    "github_link": "jandjfkdas",
-    "stopwatch_time": "00:00:17"
-  },
-  {
-    "name": "testing shortcut",
-    "email": "gmail.com",
-    "phone": "1233353363563",
-    "github_link": "gihub.com",
-    "stopwatch_time": "00:00:00"
-  },
-  {
-    "name": "testing",
-    "email": "testing@gmail.com",
-    "phone": "1234567890",
-    "github_link": "testing.com",
-    "stopwatch_time": "00:00:01"
-  },
-  {
-    "name": "testing",
-    "email": "testin",
-    "phone": "Imports System.Net.Http",
-    "github_link": "Imports System.Net.Http",
-    "stopwatch_time": "00:00:00"
-  },
-  {
     "name": "testing",
     "email": "testing",
     "phone": "testing",
@@ -54,5 +12,12 @@
     "phone": "testing",
     "github_link": "testing",
     "stopwatch_time": "00:00:01"
+  },
+  {
+    "name": "final testing",
+    "email": "final testing",
+    "phone": "final testing",
+    "github_link": "final testing",
+    "stopwatch_time": "00:00:03"
   }
 ]
