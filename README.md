@@ -5,5 +5,4 @@
 ```bash
 npm install
 
-## Run Server
-```npm start
+
